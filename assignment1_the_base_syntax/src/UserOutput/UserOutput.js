@@ -2,10 +2,14 @@ import React from 'react';
 import './UserOutput.css';
 
 const userOutput = (props) => {
+    const style = {
+        margin: "auto 20px"
+    }
+
     return (
         <div className="userOutput">
-            <p>Username: {props.userName}</p>
-            <p>THIS IS A TEST</p>
+            <p style={style}>Username: {props.userName}</p>
+            <p style={style}>THIS IS A TEST</p>
         </div>
     )
 }
