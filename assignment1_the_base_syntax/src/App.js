@@ -7,8 +7,19 @@ import UserOutput from './UserOutput/UserOutput';
 function App() {
   return (
     <div className="App">
-      <UserInput />
-      <UserOutput />
+      <UserInput 
+        userName="Kyle"
+      />
+      <UserOutput 
+        userName="Sarah"
+      />
+      <UserOutput 
+        userName="Zach"
+      />
+      <UserOutput 
+        userName="Curtis"
+      />
+
     </div>
   );
 }
