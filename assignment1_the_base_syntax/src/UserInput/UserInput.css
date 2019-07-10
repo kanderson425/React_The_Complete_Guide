@@ -1,0 +1,12 @@
+.userInput {
+    border: solid black 5px;
+    border-radius: 3px;
+    width: 50%;
+    height: 60%;
+    font-size: 30px;
+}
+
+.inputContainer {
+    height: 80px;
+}
+
