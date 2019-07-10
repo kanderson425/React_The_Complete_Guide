@@ -22,6 +22,7 @@ class App extends Component {
         <UserInput 
           userName={this.state.username}
           changed={this.switchNameHandler}
+          currentName={this.state.username}
         />
         <UserOutput 
           userName={this.state.username}
@@ -39,3 +40,5 @@ class App extends Component {
 }
 
 export default App;
+
+//Solution
