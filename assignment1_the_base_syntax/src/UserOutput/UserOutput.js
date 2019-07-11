@@ -8,7 +8,7 @@ const userOutput = (props) => {
 
     return (
         <div className="userOutput">
-            <p style={style}>Username: {props.userName}</p>
+            <p className="userNameOutput" style={style}>Username: {props.userName}</p>
             <p style={style}>THIS IS A TEST</p>
         </div>
     )
