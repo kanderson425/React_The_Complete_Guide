@@ -98,16 +98,9 @@ class App extends Component {
   }
 
   togglePersonsHandler = () => {
-    this.setState({
-      persons: [
-        {name: 'Max', age: 28},
-        {name: 'Manu', age: 29},
-        {name: 'Stephanie', age: 26}
-      ],
-      otherState: 'some other value',
-      showPersons: true
-    })
-
+    const doesShow = this.state.showPersons;
+    
+    this.setState({showPersons: !doesShow})
   }
   
   render () {
