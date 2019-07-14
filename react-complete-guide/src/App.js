@@ -103,7 +103,7 @@ class App extends Component {
 
     person.name = event.target.value;
 
-    const persons = [...this.state.person];
+    const persons = [...this.state.persons];
     persons[personIndex] = person;
 
     this.setState({persons: persons}); //Now we can call the setState method and mutate our persons array (which was our copy) so we can avoid mutating state directly
