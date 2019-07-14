@@ -89,18 +89,29 @@ class App extends Component {
   // }
 
   nameChangedHandler = (event, id) => {
-    this.setState( {
-      persons: [
-        {name: 'Max', age: 28},
-        {name: event.target.value, age: 29},
-        {name: 'Stephanie', age: 26}
-      ]
-    })
+    const personIndex = this.state.persons.findIndex(p => {
+      return p.id === id;
+    });
+
+    //this is the more modern approach
+    const person = {
+      ...this.state.persons[personIndex]
+    };
+
+    //alternative approach
+    // const person = Object.assign({}, this.state.persons[personIndex]);
+
+    person.name = event.target.value;
+
+    const persons = [...this.state.person];
+    persons[personIndex] = person;
+
+    this.setState({persons: persons}); //Now we can call the setState method and mutate our persons array (which was our copy) so we can avoid mutating state directly
   }
 
   deletePersonHandler = (personIndex) => {
     // const persons = this.state.persons.slice();
-    //BELOW IS BASICALLY THE EQUIVALENT TO THE SLICE APPROACH - MORE MODERN WAY
+    //BELOW IS BASICALLY THE EQUIVALENT TO THE SLICE APPROACH - MORE MODERN WAY => We use the spread operator here. It's way easier
     const persons = [...this.state.persons];
     persons.splice(personIndex, 1);
     this.setState({persons: persons});
