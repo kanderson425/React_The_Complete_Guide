@@ -88,7 +88,7 @@ class App extends Component {
   //   })
   // }
 
-  nameChangedHandler = (event) => {
+  nameChangedHandler = (event, id) => {
     this.setState( {
       persons: [
         {name: 'Max', age: 28},
@@ -131,7 +131,8 @@ class App extends Component {
               click={() => this.deletePersonHandler(index)}
               name={person.name} 
               age={person.age}
-              key={person.id}/>
+              key={person.id}
+              changed={(event) => this.nameChangedHandler(event, person.id)}/>
             })}
           {/* THIS IS the STATIC WAY TO RENDER THE PERSONS ARRAY
             <Person 
