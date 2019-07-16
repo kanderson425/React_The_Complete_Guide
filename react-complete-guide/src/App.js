@@ -73,8 +73,6 @@ class App extends Component {
     showPersons: false
   };
 
-
-
   // NO LONGER USING THIS METHOD
   // switchNameHandler = ( newName) => {
   //   // console.log('was clicked');
@@ -162,7 +160,6 @@ class App extends Component {
         );
       }
 
-
     return (
       <div className="App">
         <h1>Hi, I'm a React App</h1>
@@ -171,6 +168,7 @@ class App extends Component {
           style={style}
           onClick ={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
+
       </div>
     )
   }
