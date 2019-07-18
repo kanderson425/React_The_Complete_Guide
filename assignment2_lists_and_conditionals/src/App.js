@@ -12,7 +12,12 @@ class App extends Component {
   inputChangeHandler = (event) => {
     const userInput = this.state.userInput;
     this.setState({userInput: event.target.value});
+  }
 
+  deleteCharComponentHandler = (letterIndex) => {
+    const letters = [...this.state.userInput];
+    letters.splice(letterIndex, 1);
+    this.setState({letters: letters});
   }
 
   render () {
@@ -22,8 +27,10 @@ class App extends Component {
       letters = (
         <p>
           {/* we can replace this.state.userInput.split('').map to lettersArray */}
-          {this.state.userInput.split('').map(letter => {
-            return <CharComponent letter={letter}/>
+          {this.state.userInput.split('').map((letter, index) => {
+            return <CharComponent 
+            letter={letter}
+            click={() => this.deleteCharComponentHandler(index)}/>
           })}
         </p>
       )
