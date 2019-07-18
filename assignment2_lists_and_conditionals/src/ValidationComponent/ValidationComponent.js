@@ -1,12 +1,18 @@
 import React from 'react';
 import './ValidationComponent.css';
 
-const validationComponent = (props) => {
+const ValidationComponent = (props) => {
     return (
         <div className="validationComponent">
-            <h1>{props.input}</h1>
+            {
+                props.inputLength > 5 ?
+                <p>Text too long!</p> :
+                <p>Text too short!</p>
+            }
+          
+         
         </div>
     )
 }
 
-export default validationComponent;
+export default ValidationComponent;

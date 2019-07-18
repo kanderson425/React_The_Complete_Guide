@@ -10,7 +10,8 @@ class App extends Component {
   }
 
   inputChangeHandler = (event) => {
-    this.setState({useInput: event.target.value});
+    const userInput = this.state.userInput;
+    this.setState({userInput: event.target.value});
 
   }
 
@@ -21,11 +22,10 @@ class App extends Component {
         <hr />
         <input type="text" onChange={this.inputChangeHandler} value={this.state.text} />
         <p>{this.state.userInput}</p>
- 
+        <hr></hr>
         <ValidationComponent 
-        input={this.state.userInput}
-        value={this.state.userInput}
-         />
+          inputLength={this.state.userInput.length}
+        />
         <CharComponent />
       
       </div>
