@@ -16,6 +16,18 @@ class App extends Component {
   }
 
   render () {
+    let letters = null;
+    let lettersArray = this.state.userInput.split('');
+    if(this.state.userInput.length) {
+      letters = (
+        <p>
+          {lettersArray.map(letter => {
+            return <CharComponent letter={letter}/>
+          })}
+        </p>
+      )
+    }
+
     return (
       <div className="App">
         <h1>Assignment 2: Lists & Conditionals</h1>
@@ -26,7 +38,7 @@ class App extends Component {
         <ValidationComponent 
           inputLength={this.state.userInput.length}
         />
-        <CharComponent />
+        {letters}
       
       </div>
     );

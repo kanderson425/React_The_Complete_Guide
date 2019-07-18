@@ -7,7 +7,6 @@ const ValidationComponent = (props) => {
     if (props.inputLength <= 5) {
         validationMessage = 'Text too short';
     }
-
     return (
         <div className="validationComponent">
             <p>{validationMessage}</p>
