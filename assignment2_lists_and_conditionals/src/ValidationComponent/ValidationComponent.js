@@ -2,10 +2,9 @@ import React from 'react';
 import './ValidationComponent.css';
 
 const validationComponent = (props) => {
-
     return (
         <div className="validationComponent">
-            <p>THIS IS A TEST</p>
+            <h1>{props.input}</h1>
         </div>
     )
 }
