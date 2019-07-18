@@ -17,11 +17,12 @@ class App extends Component {
 
   render () {
     let letters = null;
-    let lettersArray = this.state.userInput.split('');
+    // let lettersArray = this.state.userInput.split('');
     if(this.state.userInput.length) {
       letters = (
         <p>
-          {lettersArray.map(letter => {
+          {/* we can replace this.state.userInput.split('').map to lettersArray */}
+          {this.state.userInput.split('').map(letter => {
             return <CharComponent letter={letter}/>
           })}
         </p>
@@ -39,7 +40,6 @@ class App extends Component {
           inputLength={this.state.userInput.length}
         />
         {letters}
-      
       </div>
     );
   }
