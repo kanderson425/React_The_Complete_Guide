@@ -14,33 +14,34 @@ class App extends Component {
     this.setState({userInput: event.target.value});
   }
 
-  deleteCharComponentHandler = (letterIndex) => {
-    const letters = [...this.state.userInput];
-    letters.splice(letterIndex, 1);
-    this.setState({letters: letters});
+  deleteCharComponentHandler = (index) => {
+    const text = this.state.userInput.split('');
+    const letters = [...text]
+    letters.splice(index, 1);
+    const letterStr = letters.join('');
+    this.setState({userInput: letterStr})
+   
   }
 
   render () {
-    let letters = null;
-    // let lettersArray = this.state.userInput.split('');
-    if(this.state.userInput.length) {
-      letters = (
-        <p>
-          {/* we can replace this.state.userInput.split('').map to lettersArray */}
-          {this.state.userInput.split('').map((letter, index) => {
+
+      const letters = this.state.userInput.split('').map((letter, index) => {
             return <CharComponent 
             letter={letter}
-            click={() => this.deleteCharComponentHandler(index)}/>
-          })}
-        </p>
-      )
-    }
+            key={index}
+            clicked={() => this.deleteCharComponentHandler(index)}/>
+          });
+    
+ 
 
     return (
       <div className="App">
         <h1>Assignment 2: Lists & Conditionals</h1>
         <hr />
-        <input type="text" onChange={this.inputChangeHandler} value={this.state.text} />
+        <input 
+          type="text" 
+          onChange={this.inputChangeHandler} 
+          value={this.state.text} />
         <p>{this.state.userInput}</p>
         <hr></hr>
         <ValidationComponent 

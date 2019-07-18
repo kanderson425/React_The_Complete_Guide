@@ -4,7 +4,7 @@ import './CharComponent.css';
 const charComponent = (props) => {
     return (
         <div className="CharComponent">
-            <p>{props.letter}</p>
+            <p onClick={props.clicked}>{props.letter}</p>
         </div>
     )
 }
