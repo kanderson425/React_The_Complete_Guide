@@ -1,5 +1,6 @@
 import React from 'react';
 import './Person.css';
+import Radium from 'radium';
 
 //Using ES6 - this is how we will create this component using const
 //We will use the arrow function courtesy of ES6, this is better form
