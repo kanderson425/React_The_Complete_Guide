@@ -16,10 +16,9 @@ class App extends Component {
 
   deleteCharComponentHandler = (index) => {
     const text = this.state.userInput.split('');
-    const letters = [...text]
-    letters.splice(index, 1);
-    const letterStr = letters.join('');
-    this.setState({userInput: letterStr})
+    text.splice(index, 1);
+    const updatedText = text.join('');
+    this.setState({userInput: updatedText})
    
   }
 
