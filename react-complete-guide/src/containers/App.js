@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 // import {useState} from 'react';
 import './App.css';
-import Person from './Person/Person';
-import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import Person from '../components/Persons/Person/Person';
+import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
+import Persons from '../components/Persons/Persons';
 
 //This is React Hooks-based approach
 // const App = (props) => {
@@ -129,27 +130,11 @@ class App extends Component {
       if (this.state.showPersons) {
         persons = (
           <div>
-            {this.state.persons.map((person, index) => {
-              return <ErrorBoundary key={person.id}>
-              <Person 
-              click={() => this.deletePersonHandler(index)}
-              name={person.name} 
-              age={person.age}
-              changed={(event) => this.nameChangedHandler(event, person.id)}/></ErrorBoundary>
-            })}
-          {/* THIS IS the STATIC WAY TO RENDER THE PERSONS ARRAY
-            <Person 
-            name={this.state.persons[0].name} 
-            age={this.state.persons[0].age}/>
-          <Person 
-            name={this.state.persons[1].name} 
-            age={this.state.persons[1].age}
-            click={this.switchNameHandler.bind(this, 'Max!')} 
-            changed={this.nameChangedHandler}> My Hobbies: Racing
-          </Person>
-          <Person 
-            name={this.state.persons[2].name} 
-            age={this.state.persons[2].age}/> */}
+            <Persons 
+              persons={this.state.persons}
+              clicked={this.deletePersonHandler}
+              changed={this.nameChangedHandler}
+            />
         </div> 
         );
 
