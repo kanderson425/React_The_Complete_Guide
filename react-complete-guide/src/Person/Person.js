@@ -6,6 +6,11 @@ import './Person.css';
 //We will use the arrow function courtesy of ES6, this is better form
 
 const person = (props) => {
+    const rnd = Math.random();
+
+    if (rnd > 0.7) {
+        throw new Error('Something went wrong');
+    }
 
     return (
         <div className="Person">
