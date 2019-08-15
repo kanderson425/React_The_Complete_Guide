@@ -4,6 +4,9 @@ import './App.css';
 import Person from '../components/Persons/Person/Person';
 import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
 import Persons from '../components/Persons/Persons';
+import Cockpit from '../components/Cockpit/Cockpit';
+import classes from '../components/Cockpit/Cockpit.css';
+
 
 //This is React Hooks-based approach
 // const App = (props) => {
@@ -60,8 +63,6 @@ import Persons from '../components/Persons/Persons';
 //   }
 
 // export default App;
-
-
 
 //Class Based Approach
 class App extends Component {
@@ -129,24 +130,21 @@ class App extends Component {
 
       if (this.state.showPersons) {
         persons = (
-          <div>
             <Persons 
               persons={this.state.persons}
               clicked={this.deletePersonHandler}
               changed={this.nameChangedHandler}
             />
-        </div> 
         );
-
-
-
       };
 
-
-
     return (
-      <div className="App">
-
+      <div className={classes.App}>
+        <Cockpit 
+          showPersons={this.state.showPersons}
+          persons={this.state.persons}
+          clicked={this.togglePersonsHandler}
+        />
         {persons}
 
       </div>
