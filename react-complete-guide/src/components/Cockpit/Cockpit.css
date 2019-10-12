@@ -8,10 +8,12 @@
   
   .button {
     border: 1px solid blue;
-    padding: 16px;
+    padding: 40px 20px 40px 20px;
     background-color: green;
     font: inherit;
     color: white;
+    font-weight: bold;
+
   }
   
   .button:hover {
@@ -22,6 +24,7 @@
   .buttonRed {
     background-color: red;
     border: 1px solid blue;
+    padding: 40px 20px 40px 20px;
     padding: 16px;
     font: inherit;
     color: white;
