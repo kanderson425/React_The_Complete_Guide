@@ -7,28 +7,33 @@
   }
   
   .button {
-    border: 1px solid blue;
-    padding: 40px 20px 40px 20px;
+    border: 5px solid black;
+    border-radius: 8px;
+    padding: 20px;
     background-color: green;
     font: inherit;
     color: white;
     font-weight: bold;
+    outline: none;
 
   }
   
   .button:hover {
     background-color: lightgreen;
     color: black;
+    border: 2px solid black;
   }
   
   .buttonRed {
     background-color: red;
-    border: 1px solid blue;
-    padding: 40px 20px 40px 20px;
+    border: 5px solid black;
+    border-radius: 8px;
+    padding: 40px;
     padding: 16px;
     font: inherit;
     color: white;
     cursor:pointer;
+    outline: none;
   
   }
   

@@ -1,12 +1,12 @@
 .Person {
-    width: 60%;
+    width: 40%;
     margin: 16px auto;
     border: 1px solid black;
-    box-shadow: 0 2px 3px #ccc;
-    padding: 16px;
+    box-shadow: 0 2px 3px rgba(204, 204, 204, 0.406);
+    padding: 12px;
     text-align: center;
     font-weight: bold;
-    background-color: teal;
+    background-color: rgb(5, 201, 201);
 }
 
 @media (min-width: 500px) {
